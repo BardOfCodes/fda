@@ -1,0 +1,22 @@
+data_config:
+  batch_size: 10
+  # This configuration corresponds to input normalization used for networks such as Inception V3.
+  normalize: False
+  image_list: 'assets/final_dev.txt'
+  gt_list: 'assets/final_dev_gt.txt'
+
+# for the graph
+graph_config:
+  model: 'vgg_16'
+  num_classes: 1000
+  checkpoint_file: 'assets/model_weights/vgg_16/model.ckpt'
+
+# for the attack
+attack_config:
+  attack_name: 'FDA'
+  attack_type: 'GT'
+
+attack_params:
+  eps: 16
+  eps_iter: 2
+  nb_iter: 10
