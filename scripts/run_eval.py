@@ -122,8 +122,8 @@ def run_eval(params):
     logger.info('Loaded the attack')
 
     # Evaluation
-    im_list = open(data_config['image_list']).readlines()[::5]
-    gt_list = open(data_config['gt_list']).readlines()[::5]
+    im_list = open(data_config['image_list']).readlines()
+    gt_list = open(data_config['gt_list']).readlines()
     im_list = [x.strip() for x in im_list]
     gt_list = [x.strip() for x in gt_list]
 

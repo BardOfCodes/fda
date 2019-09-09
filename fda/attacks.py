@@ -13,13 +13,14 @@ __all__ = ['MadryEtAl', 'BasicIterativeMethod', 'MomentumIterativeMethod']
 
 class FDA(Attack):
     """
-    Documentation
+    FDA: Feature disruptive Attack.
+    This attack is described in link TBA.
     """
 
     def __init__(self, model, sess=None, dtypestr='float32',
                  default_rand_init=True, **kwargs):
         """
-        Based on ProjectedGradientDescent.
+        Based on ProjectedGradientDescent in cleverhans.
         """
         if not isinstance(model, Model):
             model = CallableModelWrapper(model, 'probs')
@@ -49,8 +50,6 @@ class FDA(Attack):
         :param y_target: (optional) A tensor with the labels to target. Leave
                          y_target=None if y is also set. Labels should be
                          one-hot-encoded.
-        :param ord: (optional) Order of the norm (mimics Numpy).
-                    Possible values: np.inf, 1 or 2.
         :param clip_min: (optional float) Minimum input component value
         :param clip_max: (optional float) Maximum input component value
         :param rand_init: (optional bool) If True, an initial random
@@ -73,7 +72,6 @@ class FDA(Attack):
                      eps_iter=0.01,
                      nb_iter=40,
                      y=None,
-                     ord=np.inf,
                      clip_min=None,
                      clip_max=None,
                      y_target=None,
@@ -93,8 +91,6 @@ class FDA(Attack):
         :param y_target: (optional) A tensor with the labels to target. Leave
                          y_target=None if y is also set. Labels should be
                          one-hot-encoded.
-        :param ord: (optional) Order of the norm (mimics Numpy).
-                    Possible values: np.inf, 1 or 2.
         :param clip_min: (optional float) Minimum input component value
         :param clip_max: (optional float) Maximum input component value
         :param rand_init: (optional bool) If True, an initial random
@@ -107,16 +103,12 @@ class FDA(Attack):
         self.nb_iter = nb_iter
         self.y = y
         self.y_target = y_target
-        self.ord = ord
         self.clip_min = clip_min
         self.clip_max = clip_max
         self.rand_init = rand_init
 
         if self.y is not None and self.y_target is not None:
             raise ValueError("Must not set both y and y_target")
-        # Check if order of the norm is acceptable given current implementation
-        if self.ord not in [np.inf, 1, 2]:
-            raise ValueError("Norm order must be either np.inf, 1, or 2.")
 
         return True
 
@@ -167,7 +159,7 @@ class FDA(Attack):
         loss = loss / len(opt_operations)
         return loss
 
-    def loss_naive(self):
+    def loss(self):
         # first we need to collect all the layers in the graph.
         opt_operations = self.get_opt_layers()
 
@@ -191,7 +183,7 @@ class FDA(Attack):
         input_batch = tf.concat([x, adv_x], 0)
         logits = self.model.get_logits(input_batch)
 
-        loss = self.loss_naive()
+        loss = self.loss()
         grad, = tf.gradients(loss, adv_x)
         scaled_signed_grad = self.eps_iter * tf.sign(grad)
         adv_x = adv_x + scaled_signed_grad

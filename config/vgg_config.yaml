@@ -1,5 +1,5 @@
 data_config:
-  batch_size: 10
+  batch_size: 1
   # This configuration corresponds to input normalization used for networks such as Inception V3.
   normalize: False
   image_list: 'assets/final_dev.txt'

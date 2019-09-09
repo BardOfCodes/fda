@@ -17,16 +17,14 @@ For more information read our paper here!
 
 For a detailed Collab notebook Walkthrough checkout here!
 
-The code is implemented in TensorFlow with the use of the `TF-slim` and `CleverHans` libraries.
+The code is implemented in TensorFlow with the use of `TF-slim` and `CleverHans`.
 
 ## Instruction
 
 1) Fetch the required libraries: 
 
 ```
-git clone https://github.com/tensorflow/cleverhans
-# For CleverHans we tested with this commit. May/maynot work with latter commits.
-git checkout 51cb6d660b9d333ee637baf595205c7f5d1f1d66
+git clone https://github.com/BardOfCodes/cleverhans.git
 
 git clone https://github.com/BardOfCodes/models.git
 ```
@@ -61,12 +59,12 @@ python scripts/run_eval.py --config config/test_config.yaml
 The model should show print the results and also log more information in the results folder.
 
 ## Acknowledgement:
+I would like to thank:
 
-1) I would like to thank my mentor R. Venkatesh Babu. Apart from the mentorship, he also provided crucially an
-   environment to pursue research ideas freely. 
+1) My many friends, mentors and colleagues from Video Analytics Labs for having multiple ad-hoc 
+discussions on this work and giving valuable suggestions.
 
-2) My many friends and colleagues from Video Analytics Labs for having multiple ad-hoc discussions on this work and 
-giving valuable suggestions. 
+2) Preferred Networks Inc for providing the freedom to pursue personal research directions.
 
 #### Note: The code for many other ablations in the paper can be found in this repository (warning: code is messy).
 
