@@ -1,4 +1,5 @@
 # for the website
+dist/*
 fda/*
 config/*
 scripts/*
