@@ -18,7 +18,7 @@ from cleverhans import model as chm
 from fda.data_loader import DataLoader
 from fda import utils
 from fda import attacks
-from fda import metrics as metrics_functions
+from fda import metrics as metric_functions
 
 
 def config_specific_params(config):
@@ -130,7 +130,7 @@ def run_eval(params):
     total_iter = len(im_list) / batch_size
 
     # metrics
-    metrics = metrics_functions.init_metrics()
+    metrics = metric_functions.init_metrics()
 
     # define stylize net
 
@@ -161,7 +161,7 @@ def run_eval(params):
         normal_out, adv_out = \
             session.run([logits, logits_frm_placeholder], feed_dict=feed_dict)
 
-        metrics = metrics_functions.update_metrics(metrics, normal_out,
+        metrics = metric_functions.update_metrics(metrics, normal_out,
                                                    adv_out, gt_real,
                                                    graph_config['offset'])
 

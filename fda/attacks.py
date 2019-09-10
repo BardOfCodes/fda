@@ -72,6 +72,7 @@ class FDA(Attack):
                      eps_iter=0.01,
                      nb_iter=40,
                      y=None,
+                     ord=np.inf,
                      clip_min=None,
                      clip_max=None,
                      y_target=None,
@@ -88,6 +89,8 @@ class FDA(Attack):
         :param eps_iter: (required float) step size for each attack iteration
         :param nb_iter: (required int) Number of attack iterations.
         :param y: (optional) A tensor with the model labels.
+        :param ord: (optional) Order of the norm (mimics Numpy).
+                Possible values: np.inf, 1 or 2.
         :param y_target: (optional) A tensor with the labels to target. Leave
                          y_target=None if y is also set. Labels should be
                          one-hot-encoded.
@@ -102,6 +105,7 @@ class FDA(Attack):
         self.eps_iter = eps_iter
         self.nb_iter = nb_iter
         self.y = y
+        self.ord = ord
         self.y_target = y_target
         self.clip_min = clip_min
         self.clip_max = clip_max
