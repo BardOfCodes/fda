@@ -8,9 +8,7 @@
   <img src="misc/LBLFCpartial.png" height="400" title="FDA">
 </p>
 
-This repository contains code for our recently published adversarial attack **FDA**. 
-
-Our work focuses on attacking and 
+This repository contains code for our recently published adversarial attack **FDA**. Our work focuses on attacking and 
 disrupting the features of adversarial samples, which make them useless for multiple tasks. 
 
 For more information read our paper here!
