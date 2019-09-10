@@ -5,27 +5,27 @@
         {
             "id": 0,
             "link_name": "Link to Code",
-            "link": "asdasdff"
+            "link": "https://github.com/BardOfCodes/fda"
         },
         {
             "id": 1,
             "link_name": "Link to Collab Notebook",
-            "link": "asdf"
+            "link": "https://colab.research.google.com/drive/1WhkKCrzFq5b7SNrbLUfdLVo5-WK5mLJh"
         },
         {
             "id": 2,
             "link_name": "Link to Paper",
-            "link": "asdf"
+            "link": "TBA"
         },
         {
             "id": 3,
             "link_name": "Link to Supplementary",
-            "link": "asasdfdf"
+            "link": "../assets/supplementary.pdf"
         }
     ],
-    "videoLink": "https://www.youtube-nocookie.com/embed/b-wIMYfDYWI",
+    "videoLink": "https://drive.google.com/file/d/14tAZb2aIGTsxwwsR7K15aS_ZTgga6UTa/preview",
     "paperContent": {
         "abstract": "Though Deep Neural Networks (DNN) show excellent performance across various computer vision tasks, several works show their vulnerability to adversarial samples, i.e., image samples with imperceptible noise engineered to manipulate the network's prediction. Adversarial sample generation methods range from simple to complex optimization techniques. Majority of these methods generate adversaries through optimization objectives that are tied to the pre-softmax or softmax output of the network. In this work we, (i) show the drawbacks of such attacks, (ii) propose two new evaluation metrics: Old Label New Rank (OLNR) and New Label Old Rank (NLOR) in order to quantify the extent of damage made by an attack, and (iii) propose a new adversarial attack  FDA: Feature Disruptive Attack, to address the drawbacks of existing attacks. FDA works by generating image perturbation that disrupt features at each layer of the network and causes deep-features to be highly corrupt. This allows FDA adversaries to severely reduce the performance of deep networks. We experimentally validate that FDA generates stronger adversaries than other state-of-the-art methods for image classification, even in the presence of various defense measures. More importantly, we show that FDA disrupts feature-representation based tasks even without access to the task-specific network or methodology.",
-        "bibtex": "@article{gduap-mopuri-2018,\n title={Generalizable Data-free Objective for Crafting Universal Adversarial Perturbations }, \n author={Mopuri, Konda Reddy and Ganeshan, Aditya and Babu, R Venkatesh}, \n booktitle = {IEEE Transactions on Pattern Analysis and Machine Intelligence (PAMI)}, \n year = { 2018 } }"
+        "bibtex": "@article{fda-aditya-2019,\n title={FDA: Feature Disruptive Attack }, \n author={Ganeshan, Aditya and B.S., Vivek and  and Babu, R Venkatesh}, \n booktitle = {IEEE / CVF International Conference on Computer Vision (ICCV)\n}, \n year = { 2019 } }"
     }
 }
