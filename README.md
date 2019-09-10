@@ -1,5 +1,7 @@
 # fda
 
+The code for the website is built using vue.js.
+
 ## Project setup
 ```
 npm install
